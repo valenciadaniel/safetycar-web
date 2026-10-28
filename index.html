@@ -612,6 +612,15 @@ p{ color:var(--slate); line-height:1.7; }
 @media(prefers-reduced-motion:reduce){
   *{ scroll-behavior:auto!important; transition:none!important; animation:none!important; }
 }
+
+/* Logo y fotos reales */
+.brand-chip{ display:inline-flex; align-items:center; background:var(--white); border-radius:10px; padding:5px 10px; }
+.brand-chip img{ height:40px; width:auto; }
+.hero-logo{ width:100%; max-width:420px; height:auto; position:relative; z-index:1; filter:drop-shadow(0 6px 24px rgba(28,51,104,.18)); }
+.photo{ width:100%; height:100%; object-fit:cover; border-radius:var(--rl); box-shadow:0 18px 44px -18px rgba(30,42,86,.35); }
+.svc-imgs .photo{ min-height:160px; aspect-ratio:1/1; }
+.svc-imgs .photo:first-child{ grid-column:1/-1; aspect-ratio:16/9; }
+@media(max-width:680px){ .svc-imgs .photo:first-child{ grid-column:auto; } }
 </style>
 </head>
 <body>
@@ -620,25 +629,7 @@ p{ color:var(--slate); line-height:1.7; }
 <header class="site-header">
   <div class="wrap">
     <a href="#inicio" class="brand">
-      <!-- Emblema SVG fiel al logo real -->
-      <svg style="display:none" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Aro exterior con marcadores de cruces (como en el logo) -->
-        <circle cx="40" cy="40" r="36" stroke="#B0B8C1" stroke-width="1.5"/>
-        <circle cx="40" cy="40" r="29" stroke="rgba(176,184,193,0.4)" stroke-width="1"/>
-        <!-- Marcadores cardinales -->
-        <line x1="40" y1="2" x2="40" y2="10" stroke="#B0B8C1" stroke-width="1.5"/>
-        <line x1="40" y1="70" x2="40" y2="78" stroke="#B0B8C1" stroke-width="1.5"/>
-        <line x1="2" y1="40" x2="10" y2="40" stroke="#B0B8C1" stroke-width="1.5"/>
-        <line x1="70" y1="40" x2="78" y2="40" stroke="#B0B8C1" stroke-width="1.5"/>
-        <!-- Forma ojo/lente (la carretera/lane) -->
-        <path d="M18 40 Q40 24 62 40 Q40 56 18 40Z" stroke="#8192AC" stroke-width="1.8" fill="rgba(129,146,172,0.15)"/>
-        <!-- Flecha de velocidad (azul, como en el logo) -->
-        <path d="M22 40 L52 40" stroke="#2F508E" stroke-width="3" stroke-linecap="round"/>
-        <path d="M46 33 L55 40 L46 47" stroke="#2F508E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-        <!-- Punto central -->
-        <circle cx="40" cy="40" r="3" fill="#2F508E"/>
-      </svg>
-      <span class="brand-name">SAFETY CAR<small>movilidad segura y eficiente</small></span>
+      <span class="brand-chip"><img src="img/safety_car_mobility_logo.png" alt="Safety Car Mobility"></span>
     </a>
 
     <nav class="nav-links" id="mainNav">
@@ -675,50 +666,7 @@ p{ color:var(--slate); line-height:1.7; }
       Monitoreo en tiempo real · Póliza activa
     </div>
 
-    <!-- Logo SVG fiel al original: retículo plateado + curva navy + flecha azul -->
-    <svg class="hero-logo-svg" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo Traslados Safety Car">
-      <!-- Retículo exterior (arcos con gaps para las líneas del crosshair) -->
-      <path d="M150 22 A128 128 0 0 1 278 150" stroke="#A8B2BE" stroke-width="5" fill="none"/>
-      <path d="M278 150 A128 128 0 0 1 150 278" stroke="#A8B2BE" stroke-width="5" fill="none"/>
-      <path d="M150 278 A128 128 0 0 1 22 150"  stroke="#A8B2BE" stroke-width="5" fill="none"/>
-      <path d="M22 150 A128 128 0 0 1 150 22"   stroke="#A8B2BE" stroke-width="5" fill="none"/>
-      <!-- Líneas del crosshair -->
-      <line x1="150" y1="2"   x2="150" y2="21"  stroke="#A8B2BE" stroke-width="4"/>
-      <line x1="150" y1="279" x2="150" y2="298" stroke="#A8B2BE" stroke-width="4"/>
-      <line x1="2"   y1="150" x2="21"  y2="150" stroke="#A8B2BE" stroke-width="4"/>
-      <line x1="279" y1="150" x2="298" y2="150" stroke="#A8B2BE" stroke-width="4"/>
-      <!-- Marcas + en los extremos del crosshair -->
-      <line x1="142" y1="8"   x2="158" y2="8"   stroke="#A8B2BE" stroke-width="3"/>
-      <line x1="142" y1="292" x2="158" y2="292" stroke="#A8B2BE" stroke-width="3"/>
-      <line x1="8"   y1="142" x2="8"   y2="158" stroke="#A8B2BE" stroke-width="3"/>
-      <line x1="292" y1="142" x2="292" y2="158" stroke="#A8B2BE" stroke-width="3"/>
-      <!-- Lente / ojo (dos arcos formando la forma de ojo del logo) -->
-      <path d="M45 150 Q150 68 255 150" stroke="#A8B2BE" stroke-width="4" fill="none"/>
-      <path d="M255 150 Q150 232 45 150" stroke="#A8B2BE" stroke-width="4" fill="none"/>
-      <!-- Segundo lente interior (más pequeño, más tenue) -->
-      <path d="M78 150 Q150 96 222 150" stroke="#A8B2BE" stroke-width="2.5" opacity=".5" fill="none"/>
-      <path d="M222 150 Q150 204 78 150" stroke="#A8B2BE" stroke-width="2.5" opacity=".5" fill="none"/>
-      <!-- Curva de carretera (gruesa, navy oscuro — el elemento principal del logo) -->
-      <path d="M80 240 Q95 185 120 158 Q148 128 185 112" stroke="#1C3368" stroke-width="22" stroke-linecap="round" fill="none"/>
-      <!-- Borde interior de la curva (más delgado, separación visual) -->
-      <path d="M95 235 Q108 184 130 160 Q155 134 188 120" stroke="#B3BCC5" stroke-width="6" stroke-linecap="round" fill="none" opacity=".6"/>
-      <!-- Flecha (gradiente azul — de navy a arrow blue) -->
-      <defs>
-        <linearGradient id="ag" x1="160" y1="120" x2="270" y2="110" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stop-color="#1C3368"/>
-          <stop offset="100%" stop-color="#2667B6"/>
-        </linearGradient>
-      </defs>
-      <line x1="168" y1="120" x2="258" y2="108" stroke="url(#ag)" stroke-width="14" stroke-linecap="round"/>
-      <!-- Cabeza de flecha -->
-      <polygon points="238,88 272,107 244,127" fill="#2667B6"/>
-    </svg>
-
-    <div class="hero-brand-label">
-      <span class="hero-brand-name">Traslados Safety Car</span>
-      <div class="hero-brand-rule"></div>
-      <span class="hero-brand-tag">movilidad segura y eficiente</span>
-    </div>
+    <img class="hero-logo" src="img/safety_car_mobility_logo.png" alt="Safety Car Mobility — movilidad segura y eficiente">
   </div>
 
   <!-- ── PANEL DERECHO: white + headline + CTAs ── -->
@@ -763,11 +711,7 @@ p{ color:var(--slate); line-height:1.7; }
     </div>
 
     <div style="display:flex;flex-direction:column;gap:1.2rem;">
-      <div class="img-ph" style="aspect-ratio:16/9;">
-        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg>
-        <b>Imagen de equipo</b>
-        <small>Coordinadores y trasladistas en operación de entrega o patio de vehículos.</small>
-      </div>
+      <img class="photo" src="img/equio.jpg" alt="Equipo de coordinadores y trasladistas Safety Car" loading="lazy" style="aspect-ratio:16/9;">
       <div class="cov-card">
         <div class="cov-card-top">
           <p class="eyebrow">Cobertura operativa</p>
@@ -841,26 +785,9 @@ p{ color:var(--slate); line-height:1.7; }
       </div>
 
       <div class="svc-imgs">
-        <div class="img-ph">
-          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4"><rect x="2" y="3" width="20" height="16" rx="1.5"/><path d="M8 9h8M8 13h5"/></svg>
-          <b>Orden de servicio / checklist</b>
-          <small>Formato o tablet con checklist activo frente al vehículo.</small>
-        </div>
-        <div class="img-ph">
-          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
-          <b>Levantamiento fotográfico</b>
-          <small>Trasladista tomando evidencia del vehículo.</small>
-        </div>
-        <div class="img-ph">
-          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4"><path d="M1 6l10 4 10-4M1 6v12l10 4 10-4V6M11 10v12"/></svg>
-          <b>Traslado en ruta</b>
-          <small>Auto en carretera, vista lateral o trasera.</small>
-        </div>
-        <div class="img-ph">
-          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4"><path d="M9 12l2 2 4-4M20 13c0 6-8 9-8 9s-8-3-8-9V5l8-3 8 3v8z"/></svg>
-          <b>Entrega firmada</b>
-          <small>Firma y recepción del vehículo por el cliente.</small>
-        </div>
+        <img class="photo" src="img/checklist.jpg" alt="Checklist de recolección frente al vehículo" loading="lazy">
+        <img class="photo" src="img/levantamiento.jpg" alt="Levantamiento fotográfico del vehículo" loading="lazy">
+        <img class="photo" src="img/traslados.jpg" alt="Vehículo en traslado" loading="lazy">
       </div>
     </div>
   </div>
@@ -938,11 +865,7 @@ p{ color:var(--slate); line-height:1.7; }
       <p style="margin-top:.8rem;">Al completar el checklist de recolección, se realiza la verificación y resguardo de herramientas y documentos antes de iniciar el traslado.</p>
     </div>
     <div class="cl-wrap">
-      <div class="img-ph" style="aspect-ratio:3/4;min-height:360px;">
-        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2m-6 7l2 2 4-4"/></svg>
-        <b>Checklist en operación</b>
-        <small>Trasladista completando el formato frente al vehículo. Formato vertical 3:4.</small>
-      </div>
+      <img class="photo" src="img/levantamiento.jpg" alt="Trasladista revisando la unidad" loading="lazy" style="aspect-ratio:1/1;">
       <div class="cl-cols">
         <div class="cl-box">
           <div class="cl-box-head">
@@ -1047,11 +970,6 @@ p{ color:var(--slate); line-height:1.7; }
             <div><div class="ci-label">Cobertura</div><div class="ci-val">Nacional — toda la República</div></div>
           </div>
         </div>
-        <div class="img-ph" style="min-height:170px;margin-top:1.2rem;">
-          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.4"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <b>Mapa o imagen institucional</b>
-          <small>Mapa embebido o imagen de oficina / vehículo en punto de entrega.</small>
-        </div>
       </div>
 
       <div class="form-card">
@@ -1087,13 +1005,7 @@ p{ color:var(--slate); line-height:1.7; }
     <div class="footer-top">
       <div class="footer-brand">
         <a href="#inicio" class="brand">
-          <svg class="emblem" viewBox="0 0 80 80" fill="none">
-            <circle cx="40" cy="40" r="36" stroke="#B0B8C1" stroke-width="1.5"/>
-            <path d="M18 40 Q40 24 62 40 Q40 56 18 40Z" stroke="#8192AC" stroke-width="1.5" fill="rgba(129,146,172,0.1)"/>
-            <line x1="22" y1="40" x2="52" y2="40" stroke="#2F508E" stroke-width="3" stroke-linecap="round"/>
-            <polyline points="44,32 54,40 44,48" stroke="#2F508E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          </svg>
-          <span class="brand-name">SAFETY CAR<small>movilidad segura y eficiente</small></span>
+          <span class="brand-chip"><img src="img/safety_car_mobility_logo.png" alt="Safety Car Mobility"></span>
         </a>
         <p>Logística vehicular premium para empresas y flotillas en toda la República Mexicana.</p>
       </div>
