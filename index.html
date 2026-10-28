@@ -621,7 +621,23 @@ p{ color:var(--slate); line-height:1.7; }
   <div class="wrap">
     <a href="#inicio" class="brand">
       <!-- Emblema SVG fiel al logo real -->
-      <img src="img/safety_car_mobility_logo.png" alt="Safety Car Mobility" style="height:42px;width:auto;">
+      <svg style="display:none" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Aro exterior con marcadores de cruces (como en el logo) -->
+        <circle cx="40" cy="40" r="36" stroke="#B0B8C1" stroke-width="1.5"/>
+        <circle cx="40" cy="40" r="29" stroke="rgba(176,184,193,0.4)" stroke-width="1"/>
+        <!-- Marcadores cardinales -->
+        <line x1="40" y1="2" x2="40" y2="10" stroke="#B0B8C1" stroke-width="1.5"/>
+        <line x1="40" y1="70" x2="40" y2="78" stroke="#B0B8C1" stroke-width="1.5"/>
+        <line x1="2" y1="40" x2="10" y2="40" stroke="#B0B8C1" stroke-width="1.5"/>
+        <line x1="70" y1="40" x2="78" y2="40" stroke="#B0B8C1" stroke-width="1.5"/>
+        <!-- Forma ojo/lente (la carretera/lane) -->
+        <path d="M18 40 Q40 24 62 40 Q40 56 18 40Z" stroke="#8192AC" stroke-width="1.8" fill="rgba(129,146,172,0.15)"/>
+        <!-- Flecha de velocidad (azul, como en el logo) -->
+        <path d="M22 40 L52 40" stroke="#2F508E" stroke-width="3" stroke-linecap="round"/>
+        <path d="M46 33 L55 40 L46 47" stroke="#2F508E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- Punto central -->
+        <circle cx="40" cy="40" r="3" fill="#2F508E"/>
+      </svg>
       <span class="brand-name">SAFETY CAR<small>movilidad segura y eficiente</small></span>
     </a>
 
@@ -660,7 +676,43 @@ p{ color:var(--slate); line-height:1.7; }
     </div>
 
     <!-- Logo SVG fiel al original: retículo plateado + curva navy + flecha azul -->
-    <img src="img/safety_car_mobility_logo.png" alt="Safety Car Mobility" style="width:100%;max-width:280px;">
+    <svg class="hero-logo-svg" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo Traslados Safety Car">
+      <!-- Retículo exterior (arcos con gaps para las líneas del crosshair) -->
+      <path d="M150 22 A128 128 0 0 1 278 150" stroke="#A8B2BE" stroke-width="5" fill="none"/>
+      <path d="M278 150 A128 128 0 0 1 150 278" stroke="#A8B2BE" stroke-width="5" fill="none"/>
+      <path d="M150 278 A128 128 0 0 1 22 150"  stroke="#A8B2BE" stroke-width="5" fill="none"/>
+      <path d="M22 150 A128 128 0 0 1 150 22"   stroke="#A8B2BE" stroke-width="5" fill="none"/>
+      <!-- Líneas del crosshair -->
+      <line x1="150" y1="2"   x2="150" y2="21"  stroke="#A8B2BE" stroke-width="4"/>
+      <line x1="150" y1="279" x2="150" y2="298" stroke="#A8B2BE" stroke-width="4"/>
+      <line x1="2"   y1="150" x2="21"  y2="150" stroke="#A8B2BE" stroke-width="4"/>
+      <line x1="279" y1="150" x2="298" y2="150" stroke="#A8B2BE" stroke-width="4"/>
+      <!-- Marcas + en los extremos del crosshair -->
+      <line x1="142" y1="8"   x2="158" y2="8"   stroke="#A8B2BE" stroke-width="3"/>
+      <line x1="142" y1="292" x2="158" y2="292" stroke="#A8B2BE" stroke-width="3"/>
+      <line x1="8"   y1="142" x2="8"   y2="158" stroke="#A8B2BE" stroke-width="3"/>
+      <line x1="292" y1="142" x2="292" y2="158" stroke="#A8B2BE" stroke-width="3"/>
+      <!-- Lente / ojo (dos arcos formando la forma de ojo del logo) -->
+      <path d="M45 150 Q150 68 255 150" stroke="#A8B2BE" stroke-width="4" fill="none"/>
+      <path d="M255 150 Q150 232 45 150" stroke="#A8B2BE" stroke-width="4" fill="none"/>
+      <!-- Segundo lente interior (más pequeño, más tenue) -->
+      <path d="M78 150 Q150 96 222 150" stroke="#A8B2BE" stroke-width="2.5" opacity=".5" fill="none"/>
+      <path d="M222 150 Q150 204 78 150" stroke="#A8B2BE" stroke-width="2.5" opacity=".5" fill="none"/>
+      <!-- Curva de carretera (gruesa, navy oscuro — el elemento principal del logo) -->
+      <path d="M80 240 Q95 185 120 158 Q148 128 185 112" stroke="#1C3368" stroke-width="22" stroke-linecap="round" fill="none"/>
+      <!-- Borde interior de la curva (más delgado, separación visual) -->
+      <path d="M95 235 Q108 184 130 160 Q155 134 188 120" stroke="#B3BCC5" stroke-width="6" stroke-linecap="round" fill="none" opacity=".6"/>
+      <!-- Flecha (gradiente azul — de navy a arrow blue) -->
+      <defs>
+        <linearGradient id="ag" x1="160" y1="120" x2="270" y2="110" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#1C3368"/>
+          <stop offset="100%" stop-color="#2667B6"/>
+        </linearGradient>
+      </defs>
+      <line x1="168" y1="120" x2="258" y2="108" stroke="url(#ag)" stroke-width="14" stroke-linecap="round"/>
+      <!-- Cabeza de flecha -->
+      <polygon points="238,88 272,107 244,127" fill="#2667B6"/>
+    </svg>
 
     <div class="hero-brand-label">
       <span class="hero-brand-name">Traslados Safety Car</span>
@@ -1035,7 +1087,12 @@ p{ color:var(--slate); line-height:1.7; }
     <div class="footer-top">
       <div class="footer-brand">
         <a href="#inicio" class="brand">
-          <img src="img/safety_car_mobility_logo.png" alt="Safety Car Mobility" style="height:42px;width:auto;">
+          <svg class="emblem" viewBox="0 0 80 80" fill="none">
+            <circle cx="40" cy="40" r="36" stroke="#B0B8C1" stroke-width="1.5"/>
+            <path d="M18 40 Q40 24 62 40 Q40 56 18 40Z" stroke="#8192AC" stroke-width="1.5" fill="rgba(129,146,172,0.1)"/>
+            <line x1="22" y1="40" x2="52" y2="40" stroke="#2F508E" stroke-width="3" stroke-linecap="round"/>
+            <polyline points="44,32 54,40 44,48" stroke="#2F508E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
           <span class="brand-name">SAFETY CAR<small>movilidad segura y eficiente</small></span>
         </a>
         <p>Logística vehicular premium para empresas y flotillas en toda la República Mexicana.</p>
